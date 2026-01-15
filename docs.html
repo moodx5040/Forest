@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>صحيفة فَــوْرِسْــت ↫❄️ | 氷</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{margin:0;font-family:'Tajawal',sans-serif;background:#000;color:#fff;overflow-x:hidden;}
+.hero{position:relative;width:100%;height:100vh;overflow:hidden;z-index:0;}
+.hero .bg-videos{position:absolute;inset:0;display:grid;grid-template-rows:repeat(5,1fr);z-index:-1;}
+.hero .bg-videos video{width:100%;height:100%;object-fit:cover;}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:1;}
+.hero-content{
+  position:relative;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+  color:#fff;
+  padding:0 20px;
+}
+.hero-content h1{margin-bottom:15px;font-size:2.2em;}
+.hero-content p{margin-bottom:20px;font-size:1.1em;}
+.hero-image{width:100%;max-width:600px;margin:20px auto;border-radius:12px;display:block;}
+.section{position:relative;padding:40px 20px;z-index:2;background:transparent;}
+.audio-player{display:block;width:90%;margin:30px auto;height:40px;border-radius:12px;}
+.branch-btn{display:block;margin:20px auto;padding:12px 25px;background:#7a1414;border:none;border-radius:12px;color:#fff;font-size:1em;cursor:pointer;transition:.3s;}
+.branch-btn:hover{background:#a71c1c;}
+.circle-btn{position:fixed;top:20px;width:46px;height:46px;border-radius:50%;background:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;z-index:30;transition:.3s;}
+.circle-btn:hover{background:#7a1414;}
+.social-btn{left:20px;}
+.home-btn{right:20px;}
+.social-menu,.pages-menu{position:fixed;top:70px;background:#111;padding:20px;border-radius:12px;display:none;flex-direction:column;gap:15px;z-index:40;}
+.social-menu.active,.pages-menu.active{display:flex;}
+.social-menu a,.pages-menu a{color:#fff;text-decoration:none;background:#222;padding:10px 15px;border-radius:50px;}
+footer{background:#000;border-top:1px solid #222;padding:20px 10px;text-align:center;z-index:2;position:relative;}
+.footer-content{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.footer-logo{width:40px;}
+footer span{font-size:14px;color:#aaa;}
+footer div:last-child{margin-top:8px;font-size:13px;color:#777;}
+</style>
+</head>
+
+<body>
+
+<!-- أزرار القوائم -->
+<div class="circle-btn social-btn" onclick="toggleSocial()"><i class="fas fa-ellipsis-v"></i></div>
+<div class="circle-btn home-btn" onclick="togglePages()">❄️</div>
+
+<!-- القائمة الاجتماعية -->
+<div class="social-menu" id="social">
+  <a href="https://wa.me/212601432914">تواصل واتساب</a>
+</div>
+
+<!-- قائمة الصفحات -->
+<div class="pages-menu" id="pages">
+  <a href="index.html">الرئيسية</a>
+  <a href="elite.html">ادارة فَــوْرِسْــت</a>
+  <a href="docs.html">صحيفة فَــوْرِسْــت</a>
+  <a href="branches.html">نقابات فَــوْرِسْــت</a>
+</div>
+
+<!-- Hero Section مع الخلفية الخمسة فيديوهات -->
+<section class="hero">
+  <div class="bg-videos">
+    <video autoplay muted loop playsinline><source src="y1.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline><source src="y2.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline><source src="y3.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline><source src="y4.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline><source src="y5.mp4" type="video/mp4"></video>
+  </div>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>صحيفة فَــوْرِسْــت ↫🏰 | 太陽</h1>
+    <p>هٰذِهِ لَيْسَتِ ٱلْبِدَايَة… بَلْ خُطْوَةٌ أُولَى لِسَيْطَرَةٍ تُولَدُ فِي ٱلصَّمْت.</p>
+    <img src="y.jpg" class="hero-image">
+  </div>
+</section>
+
+<!-- القصة -->
+<section class="section">
+  <h2>قَــصَّــتُنَــا..❄️</h2>
+  <p>
+هٰذِهِ لَيْسَتِ ٱلْبِدَايَة… بَلْ خُطْوَةٌ أُولَى لِسَيْطَرَةٍ تُولَدُ فِي ٱلصَّمْت.<br>
+مَمْلَكَةُ كَــاٰمُــوْرَا تَمْتَدُّ عَبْرَ ٱلْعَالَمِ ٱلرَّقْمِيّ،<br>
+وَمَعَ كُلِّ رِسَالَة… يَتَغَيَّرُ ٱلْعَالَمُ قَلِيلًا.
+  </p>
+</section>
+
+<!-- المقطع الصوتي -->
+<audio class="audio-player" controls>
+  <source src="y.mp3" type="audio/mpeg">
+</audio>
+
+<!-- زر الدخول للصحيفة -->
+<button class="branch-btn" onclick="window.open('https://chat.whatsapp.com/FmULQlBDusVBoiwU37ehQp?mode=wwt','_blank')">ادخل الصحيفة</button>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <img src="افتار.png" class="footer-logo">
+    <span>© 2025 مملكة فَــوْرِسْــت - جميع الحقوق محفوظة</span>ط
+  </div>
+  <div>حقوق التصميم 𝑺..𖤐</div>
+</footer>
+
+<script>
+function toggleSocial(){document.getElementById("social").classList.toggle("active");}
+function togglePages(){document.getElementById("pages").classList.toggle("active");}
+</script>
+
+</body>
+</html>
