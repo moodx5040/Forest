@@ -99,7 +99,7 @@ body{
 /* المسافة بين المقدمة والبطاقات */
 .section{
   position:relative;
-  padding:180px 20px 40px 20px; /* زودت المسافة من الأعلى لتكون واضحة */
+  padding:180px 20px 40px 20px; /* زيادة المسافة من الأعلى */
   z-index:2;
 }
 .cards{
@@ -161,6 +161,12 @@ body{
 .card[data-color="#1E90FF"]:hover{box-shadow:0 0 15px #1E90FF,0 0 30px #1E90FF;border-color:#1E90FF;}
 .card[data-color="#32CD32"]:hover{box-shadow:0 0 15px #32CD32,0 0 30px #32CD32;border-color:#32CD32;}
 .card[data-color="#FF69B4"]:hover{box-shadow:0 0 15px #FF69B4,0 0 30px #FF69B4;border-color:#FF69B4;}
+
+/* آخر بطاقتين مستقلتين */
+.cards .card:last-child,
+.cards .card:nth-last-child(2) {
+  grid-column: 1 / -1; /* كل بطاقة في صف كامل */
+}
 
 /* Footer */
 footer{
@@ -226,15 +232,19 @@ footer div:last-child{margin-top:8px;font-size:13px;color:#777;}
   </div>
 </div>
 
-<!-- بطاقة الإنجاز 2 -->
+<!-- عنوان مستقل -->
+<div class="rank-category" data-aos="fade-up">
+  <h2 style="text-align:center; font-size:40px; font-weight:800; color:#fff; transform:none;">
+    إِنْجَازَاتُ مَمْلَكَةِ فْرُوسْت 🏅
+  </h2>
+</div>
+
+<!-- بطاقة تحت العنوان بدون زر "المزيد" -->
 <div class="card" data-color="#1E90FF" style="border-color:#1E90FF;">
   <div class="card-content">
     <h2>🏰</h2>
     <p>بِدَايَةُ تَّأْسِيسَ المَمْلَكَةِ</p>
-    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
-    <div class="desc">
-مُنْذُ أَنْ أُعْلِنَ تَأْسِيسُ مَمْلَكَةِ فْرُوسْت فِي شَهْرِ دِيسَمْبَر مِنْ عَامِ ٢٠٢٥م، بَدَأَتِ المَمْلَكَةُ مَسِيرَتَهَا بِخُطًى ثَابِتَةٍ وَرُؤْيَةٍ وَاضِحَةٍ، تَسْعَى لِبِنَاءِ كِيَانٍ قَوِيٍّ يَجْمَعُ بَيْنَ الحَزْمِ وَالعَدْل، وَبَيْنَ القُوَّةِ وَالوِحْدَة.
-    </div>
+    <p>مُنْذُ أَنْ أُعْلِنَ تَأْسِيسُ مَمْلَكَةِ فْرُوسْت فِي شَهْرِ دِيسَمْبَر مِنْ عَامِ ٢٠٢٥م، بَدَأَتِ المَمْلَكَةُ مَسِيرَتَهَا بِخُطًى ثَابِتَةٍ وَرُؤْيَةٍ وَاضِحَةٍ، تَسْعَى لِبِنَاءِ كِيَانٍ قَوِيٍّ يَجْمَعُ بَيْنَ الحَزْمِ وَالعَدْل، وَبَيْنَ القُوَّةِ وَالوِحْدَة.</p>
   </div>
 </div>
 
