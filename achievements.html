@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>إنجازات فُـرَؤسـتَ ↫❄️ | 氷</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body{
+  margin:0;
+  font-family:'Tajawal',sans-serif;
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* فيديو الخلفية */
+.hero{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+.hero video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:blur(3px) brightness(0.4);
+}
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding-top:120px;
+}
+
+/* زر القائمة */
+.circle-btn{
+  position:fixed;
+  top:20px;
+  right:20px;
+  width:46px;
+  height:46px;
+  border-radius:50%;
+  background:#111;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+  cursor:pointer;
+  z-index:30;
+}
+
+/* قائمة الصفحات */
+.pages-menu{
+  position:fixed;
+  top:80px;
+  right:20px;
+  background:#111;
+  padding:20px;
+  border-radius:12px;
+  display:none;
+  flex-direction:column;
+  gap:15px;
+  z-index:40;
+}
+.pages-menu.active{display:flex;}
+.pages-menu a{
+  color:#fff;
+  text-decoration:none;
+  background:#222;
+  padding:10px 15px;
+  border-radius:50px;
+}
+
+/* القسم */
+.section{
+  position:relative;
+  z-index:2;
+  margin-top:100vh;
+  padding:120px 20px 40px;
+}
+
+/* البطاقات */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+  align-items:start;
+}
+
+.card{
+  background:rgba(0,0,0,0.25);
+  border-radius:16px;
+  padding:30px 20px;
+  backdrop-filter:blur(5px);
+  border:1px solid rgba(255,255,255,0.1);
+  transition:.3s;
+}
+.card:hover{transform:translateY(-5px);}
+
+.card-content{text-align:center;width:100%;}
+.card-content p{white-space:pre-line;}
+
+.branch-btn{
+  margin-top:15px;
+  padding:8px 15px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.desc{
+  display:none;
+  margin-top:10px;
+  line-height:1.6;
+}
+
+/* اللمعان */
+.card[data-color="#FFD700"]:hover{box-shadow:0 0 20px #FFD700;}
+.card[data-color="#1E90FF"]:hover{box-shadow:0 0 20px #1E90FF;}
+.card[data-color="#32CD32"]:hover{box-shadow:0 0 20px #32CD32;}
+.card[data-color="#FF69B4"]:hover{box-shadow:0 0 20px #FF69B4;}
+
+footer{
+  margin-top:80px;
+  padding:20px;
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="circle-btn" onclick="togglePages()">𖤈</div>
+
+<div class="pages-menu" id="pages">
+  <a href="index.html">الرئيسية</a>
+  <a href="elite.html">رتب فُـرَؤسـتَ</a>
+  <a href="branches.html">نقابات فُـرَؤسـتَ</a>
+  <a href="rules.html">قوانين فُـرَؤسـتَ</a>
+  <a href="promotions.html">شروط تصنيفات فُـرَؤسـتَ</a>
+  <a href="docs.html">صحيفة فُـرَؤسـتَ</a>
+  <a href="achievements.html">إنجازات فُـرَؤسـتَ</a>
+</div>
+
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="Amm1.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>مَمْلَكَةُ فْرُوسْت ❄️</h1>
+    <p>سِجِلُّ الإِنْجَازَاتِ الَّتِي حَقَّقَتْهَا مَمْلَكَةُ فْرُوسْت مُنْذُ تَأْسِيسِهَا.:<br>
+    من النمو السريع الى بناء مجتمع قوي ومتماسك.<br>
+    كل إنجاز يكتب يذهب على صفحات تاريخ مملكتنا</p>
+  </div>
+</section>
+
+<section class="section">
+<div class="cards">
+
+<!-- بطاقة 1 -->
+<div class="card" data-color="#FFD700" style="border-color:#FFD700;">
+  <div class="card-content">
+    <h2>🏅</h2>
+    <p>إِنْجَازَاتُ مَمْلَكَةِ فْرُوسْت </p>
+    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
+    <div class="desc">
+مُنْذُ شَهْرِ دِيسَمْبَر مِنْ عَامِ ٢٠٢٥م، شَهِدَتْ مَمْلَكَةُ فْرُوسْت مَسِيرَةً حَافِلَةً بِالعَطَاءِ وَالتَّقَدُّم، وَحَقَّقَتْ الإِنْجَازَاتِ التَّالِيَة:
+مِنْ نُمُوٍّ سَرِيعٍ إِلَى بِنَاءِ مُجْتَمَعٍ قَوِيٍّ، مُتَمَاسِكٍ، تَجَمَّعَتْ فِيهِ القُوَّةُ مَعَ الوَفَاءِ، وَالوِحْدَةُ مَعَ العَزِيمَة.
+كُلُّ إِنْجَازٍ حَقَّقَتْهُ المَمْلَكَةُ يُكْتَبُ بِمَاءِ الذَّهَبِ فِي صَفَحَاتِ تَارِيخِ مَمْلَكَةِ فْرُوسْت، شَاهِدًا عَلَى عَظَمَةِ المَسِيرَةِ وَسُمُوِّ الهَدَف.
+    </div>
+  </div>
+</div>
+
+<!-- بطاقة 2 -->
+<div class="card" data-color="#1E90FF" style="border-color:#1E90FF;">
+  <div class="card-content">
+    <h2>🏰</h2>
+    <p>بِدَايَةُ تَّأْسِيسَ المَمْلَكَةِ</p>
+    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
+    <div class="desc">
+مُنْذُ أَنْ أُعْلِنَ تَأْسِيسُ مَمْلَكَةُ فْرُوسْت فِي شَهْرِ دِيسَمْبَر مِنْ عَامِ ٢٠٢٥م، بَدَأَتِ المَمْلَكَةُ مَسِيرَتَهَا بِخُطًى ثَابِتَةٍ وَرُؤْيَةٍ وَاضِحَةٍ، تَسْعَى لِبِنَاءِ كِيَانٍ قَوِيٍّ يَجْمَعُ بَيْنَ الحَزْمِ وَالعَدْل، وَبَيْنَ القُوَّةِ وَالوِحْدَة.
+    </div>
+  </div>
+</div>
+
+<!-- بطاقة 3 -->
+<div class="card" data-color="#32CD32" style="border-color:#32CD32;">
+  <div class="card-content">
+    <h2>👥</h2>
+    <p>+200 مَشُرفْ نُمُوٌّ سَرِيعٌ وَإِدَارَةٌ قَوِيٌّهَ </p>
+    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
+    <div class="desc">
+    فِي مُدَّةٍ زَمَنِيَّةٍ قَصِيرَةٍ، وَخِلَالَ شَهْرٍ وَاحِدٍ فَقَط، وَصَلَتْ مَمْلَكَةُ فْرُوسْت إِلَى أَكْثَرَ مِنْ ٢٠٠ مُشْرِفٍ، فِي دَلِيلٍ صَرِيحٍ عَلَى قُوَّةِ الإِدَارَة، وَثِقَةِ الأَعْضَاءِ، وَتَسَارُعِ النُّمُوّ فِي أَرْجَاءِ المَمْلَكَة.
+    </div>
+  </div>
+</div>
+
+<!-- بطاقة 4 -->
+<div class="card" data-color="#FF69B4" style="border-color:#FF69B4;">
+  <div class="card-content">
+    <h2>🗽</h2>
+    <p>12 نِّقَابَه رَّسْمِيَّةُ </p>
+    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
+    <div class="desc">
+      تَضُمُّ أَسْوَارُ مَمْلَكَةُ فْرُوسْت 12 نِقَابَةً رَسْمِيَّةً نَشِطَةً، تَعْمَلُ جَمِيعُهَا تَحْتَ نِظَامٍ وَاحِدٍ، وَرَايَةٍ وَاحِدَةٍ، وَهَدَفٍ مُشْتَرَكٍ، مِمَّا جَعَلَ المَمْلَكَةَ نَمُوذَجًا لِلتَّنْظِيمِ وَالتَّكَامُل.
+    </div>
+  </div>
+</div>
+
+<!-- بطاقة 5 -->
+<div class="card" data-color="#FF69B4" style="border-color:#FF69B4;">
+  <div class="card-content">
+    <h2>🌙</h2>
+    <p>أَوَّلُ نِقَابَةٍ في المَمْلَكَة وَبِدَايَةُ المَسِيرَة </p>
+    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
+    <div class="desc">
+      كَانَتْ نِقَابَةُ أَثِينَا 🌙 أَوَّلَ نِقَابَةٍ تُؤَسَّسُ فِي المَمْلَكَة، وَمِنْهَا انْطَلَقَتْ شُعْلَةُ التَّنْظِيمِ، وَوُضِعَتْ أُسُسُ التَّوَسُّعِ، لِتَكُونَ شَاهِدًا عَلَى أُولَى خُطُوَاتِ المَجْد.
+    </div>
+  </div>
+</div>
+
+<!-- بطاقة 6 -->
+<div class="card" data-color="#FFD700" style="border-color:#FFD700;">
+  <div class="card-content">
+    <h2>⚖️</h2>
+    <p>مَمْلَكَةُ فْرُوسْت الأَقْوَى وَالأَفْضَلَ مِنْ حَيْثُ القَوَانِين </p>
+    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
+    <div class="desc">
+ حَيْثُ أُسِّسَ نِظَامٌ قَوِيٌّ أَثْبَتَ اسْتِحْقَاقَهُ مُنْذُ يَوْمِ التَّأْسِيس، وَفُرِضَتْ قَوَانِينُ صَارِمَةٌ تَحْفَظُ الهَيْبَة، وَتَضْمَنُ العَدْل، وَتُرْسِّخُ الاِنْضِبَاطَ فِي جَمِيعِ أَرْكَانِ المَمْلَكَة.
+    </div>
+  </div>
+</div>
+
+<!-- بطاقة 7 -->
+<div class="card" data-color="#1E90FF" style="border-color:#1E90FF;">
+  <div class="card-content">
+    <h2>📜</h2>
+    <p>الخَاتِمَةُ</p>
+    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
+    <div class="desc">
+      وَهَكَذَا، تُوَاصِلُ مَمْلَكَةُ فْرُوسْت مَسِيرَتَهَا بِثَبَاتٍ وَعَزِيمَة، وَتُسَطِّرُ إِنْجَازَاتِهَا سَطْرًا بَعْدَ سَطْرٍ فِي سِجِلِّ التَّارِيخ، لِيَبْقَى اسْمُهَا مَقْرُونًا بِالمَجْدِ، وَمُرْتَبِطًا بِالقُوَّةِ وَالهَيْبَة.
+    </div>
+  </div>
+</div>
+
+</div>
+</section>
+
+<footer>
+  <span>© 2025 مملكة فُـرَؤسـتَ - جميع الحقوق محفوظة</span>
+</footer>
+
+<script>
+function togglePages(){
+  document.getElementById("pages").classList.toggle("active");
+}
+function toggleDesc(btn){
+  const d = btn.nextElementSibling;
+  d.style.display = d.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
