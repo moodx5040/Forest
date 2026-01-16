@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نقابات فُـرَؤسـتَ ↫❄️ | 氷</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+body{margin:0;font-family:'Tajawal',sans-serif;background:#000;color:#fff;overflow-x:hidden;}
+.hero{position:relative;width:100%;height:100vh;overflow:hidden;z-index:0;}
+.hero .bg-videos{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;z-index:-1;}
+.hero .bg-videos video{width:100%;height:100%;object-fit:cover;}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.6);z-index:1;}
+.hero-content{
+  position:relative;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:2;
+  color:#fff;
+  padding:0 20px;
+}
+.hero-content h1{margin-bottom:15px;font-size:2.2em;}
+.hero-content p{margin-bottom:20px;font-size:1.1em;}
+.circle-btn{position:fixed;top:20px;width:46px;height:46px;border-radius:50%;background:#111;display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;z-index:30;transition:.3s;}
+.circle-btn:hover{background:#7a1414;}
+.social-btn{left:20px;}
+.home-btn{right:20px;}
+.social-menu,.pages-menu{position:fixed;top:70px;background:#111;padding:20px;border-radius:12px;display:none;flex-direction:column;gap:15px;z-index:40;}
+.social-menu.active,.pages-menu.active{display:flex;}
+.social-menu a,.pages-menu a{color:#fff;text-decoration:none;background:#222;padding:10px 15px;border-radius:50px;}
+.section{position:relative;padding:60px 20px 40px 20px;z-index:2;background:transparent;}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
+.card{position:relative;background:#000;border:1px solid #222;border-radius:16px;overflow:hidden;height:280px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:16px;}
+.card-bg-image {position:absolute;top:0;left:0;width:100%;height:100%;background-size:cover;background-position:center;border-radius:16px;z-index:0;}
+.card-content {position:relative;z-index:2;width:100%;}
+.branch-name{font-size:1.3em;font-weight:bold;color:#fff;margin-bottom:8px;}
+.audio-player{display:block;width:100%;margin-top:12px;height:30px;}
+.branch-btn{background:none;border:none;cursor:pointer;outline:none;margin-top:10px;padding:8px 15px;background:#7a1414;border-radius:8px;color:#fff;transition:.3s;}
+.branch-btn:hover{background:#a71c1c;}
+.like-section{display:flex;align-items:center;gap:8px;margin-top:10px;cursor:pointer;}
+.like-section i{color:#fff;font-size:20px;transition:.3s;}
+.like-section i.liked{color:#e74c3c;}
+.like-section span{font-size:16px;}
+footer{background:#000;border-top:1px solid #222;padding:20px 10px;text-align:center;z-index:2;position:relative;}
+.footer-content{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+.footer-logo{width:40px;}
+footer span{font-size:14px;color:#aaa;}
+footer div:last-child{margin-top:8px;font-size:13px;color:#777;}
+</style>
+</head>
+<body>
+
+<div class="circle-btn social-btn" onclick="toggleSocial()"><i class="fas fa-ellipsis-v"></i></div>
+<div class="circle-btn home-btn" onclick="togglePages()">𖣘</div>
+
+<div class="social-menu" id="social">
+  <a href="https://wa.me/212601432914">تواصل واتساب</a>
+</div>
+
+<div class="pages-menu" id="pages">
+  <a href="index.html">الرئيسية</a>
+  <a href="elite.html">رتب فُـرَؤسـتَ</a>
+  <a href="branches.html">نقابات فُـرَؤسـتَ</a>
+  <a href="rules.html">قوانين فُـرَؤسـتَ</a>
+  <a href="achievements.html">انجازات فُـرَؤسـتَ</a>
+  <a href="docs.html">صحيفة فُـرَؤسـتَ </a>
+  <a href="promotions.html">شروط تصنيفات فُـرَؤسـتَ</a>
+</div>
+
+<section class="hero">
+  <div class="bg-videos">
+    <video autoplay muted loop playsinline><source src="N1.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline><source src="N2.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline><source src="N3.mp4" type="video/mp4"></video>
+    <video autoplay muted loop playsinline><source src="N4.mp4" type="video/mp4"></video>
+  </div>
+  <div class="overlay"></div>
+  <div class="hero-content">
+    <h1>نقابات فُـرَؤسـتَ</h1>
+    <p>القمة التي لا تُبلغ. أكبر طموحكم هو أن تكونوا جزءًا من فُـرَؤسـتَ.<br>
+       فُـرَؤسـتَ لا تُهدي مكانها لأحد، بل تُكرم من تستحق.</p>
+  </div>
+</section>
+
+<section class="section">
+<div class="cards">
+
+<div class="card">
+  <div class="triangle-image" style="background-image:url('Athens.jpg');"></div>
+
+  <div class="card-content">
+    <h3>اثـيـنـا</h3>
+    <span>🌙</span>
+    <button onclick="toggleDesc(this)">عرض</button>
+  </div>
+
+  <div class="desc">
+    ادميرال النقابة: لوفي
+  </div>
+</div>
+
+<!-- الفرع ثاني -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Silva.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">سـيلـفا 🕸️</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع ثالث -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Ryujin.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">ريـوجـين 🐉</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع رابع -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Ashur.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">اشـــور 🩸</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع خامس -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Wano.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">وانـــو ⛩️</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع سادس -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('North.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">نــورث 🌟</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع سايع -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Zeus.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">زيــوس⚡</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع ثامن -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Skyler.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">سـكـايلـر ☘️</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع تاسع -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Recal.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">ريـكـال ⚖️</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع عاشر -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Arkin.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">اركـيـن 🔱</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع هداعش -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Paradise.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">بـارديس 🧭</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+<!-- الفرع ثناعش -->
+<div class="card">
+  <div class="card-bg-image" style="background-image: url('Orai.jpg');"></div>
+  <div class="card-content">
+    <div class="branch-name">اوراي ♦️</div>
+    <div class="like-section" onclick="likeBranch(this)">
+      <i class="fas fa-heart"></i><span>0</span>
+    </div>
+  </div>
+</div>
+
+
+</div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <img src="افتار.png" class="footer-logo">
+    <span>© 2025 مملكة فُـرَؤسـتَ - جميع الحقوق محفوظة</span>
+  </div>
+  <div>حقوق التصميم 𝑺..𖤐</div>
+</footer>
+
+<script>
+function toggleSocial(){document.getElementById("social").classList.toggle("active");}
+function togglePages(){document.getElementById("pages").classList.toggle("active");}
+function openBranch(url,target){window.open(url,target);}
+function likeBranch(el){
+  let heart = el.querySelector('i');
+  let count = el.querySelector('span');
+  const key = el.parentElement.querySelector('.branch-name').textContent;
+  let storedLikes = localStorage.getItem('likes-'+key) || 0;
+  storedLikes = parseInt(storedLikes);
+  if(!heart.classList.contains('liked')){
+    storedLikes++;
+    localStorage.setItem('likes-'+key, storedLikes);
+    heart.classList.add('liked');
+    count.textContent = storedLikes;
+  }
+}
+document.querySelectorAll('.like-section').forEach(section=>{
+  const key = section.parentElement.querySelector('.branch-name').textContent;
+  let storedLikes = localStorage.getItem('likes-'+key) || 0;
+  section.querySelector('span').textContent = storedLikes;
+  if(storedLikes>0){section.querySelector('i').classList.add('liked');}
+});
+</script>
+
+</body>
+</html>
