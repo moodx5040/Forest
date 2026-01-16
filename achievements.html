@@ -14,7 +14,6 @@ body{
   overflow-x:hidden;
 }
 
-/* فيديو الخلفية */
 .hero{
   position:fixed;
   top:0;
@@ -24,6 +23,7 @@ body{
   overflow:hidden;
   z-index:-1;
 }
+
 .hero video{
   width:100%;
   height:100%;
@@ -31,8 +31,9 @@ body{
   position:absolute;
   top:0;
   left:0;
-  filter:brightness(0.5);
+  filter:blur(3px) brightness(0.4);
 }
+
 .overlay{
   position:absolute;
   inset:0;
@@ -40,25 +41,29 @@ body{
   z-index:0;
 }
 
-/* المقدمة فوق الفيديو */
 .hero-content{
-  position:relative;
-  text-align:center;
-  padding-top:120px;
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
   z-index:2;
-  color:#fff;
+  text-align:center;
+  padding:0 20px;
+  width:100%;
+  max-width:800px;
 }
+
 .hero-content h1{
   margin-bottom:15px;
   font-size:2.8em;
 }
+
 .hero-content p{
   margin-bottom:40px;
   font-size:1.2em;
   line-height:1.6;
 }
 
-/* زر القائمة */
 .circle-btn{
   position:fixed;
   top:20px;
@@ -74,8 +79,10 @@ body{
   z-index:30;
   transition:.3s;
 }
+
 .circle-btn:hover{background:#7a1414;}
 .home-btn{right:20px;}
+
 .pages-menu{
   position:fixed;
   top:70px;
@@ -87,6 +94,7 @@ body{
   gap:15px;
   z-index:40;
 }
+
 .pages-menu.active{display:flex;}
 .pages-menu a{
   color:#fff;
@@ -96,17 +104,20 @@ body{
   border-radius:50px;
 }
 
-/* المسافة بين المقدمة والبطاقات */
 .section{
   position:relative;
-  padding:180px 20px 40px 20px; /* زودت المسافة من الأعلى لتكون واضحة */
   z-index:2;
+  padding:160px 20px 40px; /* مساحة واضحة فوق */
 }
+
 .cards{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
   gap:30px;
+  align-items:start;
 }
+
+/* بطاقة */
 .card{
   position:relative;
   background:rgba(0,0,0,0.25);
@@ -121,23 +132,31 @@ body{
   align-items:center;
   transition:all .3s;
 }
+
 .card:hover{
   transform:translateY(-5px);
   transition:.3s;
 }
-.card-content{text-align:center;width:100%;}
+
+.card-content{
+  text-align:center;
+  width:100%;
+}
+
 .card-content h2{
   font-size:2em;
   margin-bottom:15px;
   font-weight:bold;
   text-shadow:0 0 8px #fff;
 }
+
 .card-content p{
   color:#fff;
   margin:5px 0;
   white-space:pre-line;
   font-size:1em;
 }
+
 .branch-btn{
   border:none;
   cursor:pointer;
@@ -147,7 +166,9 @@ body{
   color:#fff;
   transition:.3s;
 }
+
 .branch-btn:hover{opacity:.8;}
+
 .desc{
   display:none;
   margin-top:10px;
@@ -162,7 +183,17 @@ body{
 .card[data-color="#32CD32"]:hover{box-shadow:0 0 15px #32CD32,0 0 30px #32CD32;border-color:#32CD32;}
 .card[data-color="#FF69B4"]:hover{box-shadow:0 0 15px #FF69B4,0 0 30px #FF69B4;border-color:#FF69B4;}
 
-/* Footer */
+/* العنوان rank-category مفصول عن البطاقة */
+.rank-category{
+  margin:60px 0 30px 0; /* 60px فوق، 30px تحت */
+}
+
+/* جعل آخر بطاقتين مستقلتين */
+.card:last-child,
+.card:nth-last-child(2){
+  grid-column:1 / -1;
+}
+
 footer{
   background:#000;
   border-top:1px solid #222;
@@ -171,12 +202,14 @@ footer{
   z-index:2;
   position:relative;
 }
+
 .footer-content{
   display:flex;
   justify-content:center;
   gap:10px;
   flex-wrap:wrap;
 }
+
 .footer-logo{width:40px;}
 footer span{font-size:14px;color:#aaa;}
 footer div:last-child{margin-top:8px;font-size:13px;color:#777;}
@@ -226,15 +259,19 @@ footer div:last-child{margin-top:8px;font-size:13px;color:#777;}
   </div>
 </div>
 
-<!-- بطاقة الإنجاز 2 -->
+<!-- العنوان قبل بطاقة 2 -->
+<div class="rank-category" data-aos="fade-up">
+  <h2 style="text-align:center; font-size:40px; font-weight:800; color:#fff; transform:none;">
+    إِنْجَازَاتُ مَمْلَكَةِ فْرُوسْت 🏅
+  </h2>
+</div>
+
+<!-- بطاقة الإنجاز 2 بدون زر المزيد -->
 <div class="card" data-color="#1E90FF" style="border-color:#1E90FF;">
   <div class="card-content">
     <h2>🏰</h2>
     <p>بِدَايَةُ تَّأْسِيسَ المَمْلَكَةِ</p>
-    <button class="branch-btn" onclick="toggleDesc(this)">المزيد</button>
-    <div class="desc">
-مُنْذُ أَنْ أُعْلِنَ تَأْسِيسُ مَمْلَكَةِ فْرُوسْت فِي شَهْرِ دِيسَمْبَر مِنْ عَامِ ٢٠٢٥م، بَدَأَتِ المَمْلَكَةُ مَسِيرَتَهَا بِخُطًى ثَابِتَةٍ وَرُؤْيَةٍ وَاضِحَةٍ، تَسْعَى لِبِنَاءِ كِيَانٍ قَوِيٍّ يَجْمَعُ بَيْنَ الحَزْمِ وَالعَدْل، وَبَيْنَ القُوَّةِ وَالوِحْدَة.
-    </div>
+    <p>مُنْذُ أَنْ أُعْلِنَ تَأْسِيسُ مَمْلَكَةِ فْرُوسْت فِي شَهْرِ دِيسَمْبَر مِنْ عَامِ ٢٠٢٥م، بَدَأَتِ المَمْلَكَةُ مَسِيرَتَهَا بِخُطًى ثَابِتَةٍ وَرُؤْيَةٍ وَاضِحَةٍ، تَسْعَى لِبِنَاءِ كِيَانٍ قَوِيٍّ يَجْمَعُ بَيْنَ الحَزْمِ وَالعَدْل، وَبَيْنَ القُوَّةِ وَالوِحْدَة.</p>
   </div>
 </div>
 
